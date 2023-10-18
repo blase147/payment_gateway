@@ -1,0 +1,46 @@
+<!-- app/views/payments/new.html.erb -->
+<%= form_tag payments_path, method: :post do %>
+  <!-- Hidden Fields -->
+  <%= hidden_field_tag :key, 'JP***g' %>
+  <%= hidden_field_tag :txnid, 'txnid62351480640' %>
+  <%= hidden_field_tag :amount, '10.00' %>
+  <%= hidden_field_tag :firstname, 'Ashish' %>
+  <%= hidden_field_tag :email, 'test@gmail.com' %>
+  <%= hidden_field_tag :phone, '9876543210' %>
+  <%= hidden_field_tag :productinfo, 'iPhone' %>
+  <%= hidden_field_tag :pg, 'TESTPG' %>
+  <%= hidden_field_tag :bankcode, 'TESTPGNB' %>
+  <%= hidden_field_tag :surl, 'https://test-payment-middleware.payu.in/simulatorResponse' %>
+  <%= hidden_field_tag :txn_s2s_flow, '4' %>
+  <%= hidden_field_tag :furl, 'https://test-payment-middleware.payu.in/simulatorResponse' %>
+  <%= hidden_field_tag :hash, 'e48c5dd4fcde2afebbeac4e34347382d11c93191b8e86b6830102b81f7679b3aa020e472f2b8209d580df5ac0936f96f212e19943b7137a579acf51795dc350e' %>
+
+  <!-- User Input Fields -->
+  <div class="form-group">
+    <%= label_tag :ccnum, 'Credit Card Number:' %>
+    <%= text_field_tag :ccnum, nil, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :ccexpmon, 'Credit Card Expiry Month:' %>
+    <%= text_field_tag :ccexpmon, nil, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :ccexpyr, 'Credit Card Expiry Year:' %>
+    <%= text_field_tag :ccexpyr, nil, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :ccvv, 'CVV:' %>
+    <%= text_field_tag :ccvv, nil, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :ccname, 'Cardholder Name:' %>
+    <%= text_field_tag :ccname, nil, class: 'form-control' %>
+  </div>
+
+  <!-- Submit Button -->
+  <%= submit_tag 'Pay Now', class: 'btn btn-primary' %>
+<% end %>
